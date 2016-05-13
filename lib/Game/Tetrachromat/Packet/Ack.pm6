@@ -1,3 +1,4 @@
+use v6;
 # Copyright (C) 2016  Timm Murray
 # 
 # This program is free software; you can redistribute it and/or modify
@@ -13,19 +14,6 @@
 # You should have received a copy of the GNU General Public License along
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-use v6;
-use Test;
-plan 1;
-
-use Game::Tetrachromat;
-use Game::Tetrachromat::PacketFactory;
-use Game::Tetrachromat::Packet;
-use Game::Tetrachromat::Packet::ConnectRequest;
-use Game::Tetrachromat::Packet::ConnectResponse;
-use Game::Tetrachromat::Packet::Ack;
-use Game::Tetrachromat::Packet::Movement;
-use Game::Tetrachromat::Packet::Sync;
-use Game::Tetrachromat::Packet::Spawn;
-
-
-ok( 1, "Loaded everything" );
+class Game::Tetrachromat::Packet::Ack
+{
+}
