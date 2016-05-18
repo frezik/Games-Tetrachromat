@@ -17,13 +17,14 @@ use v6;
 use Game::Tetrachromat::Packet;
 
 class Game::Tetrachromat::Packet::Ack
-    is Game::Tetrachromat::Packet
+    does Game::Tetrachromat::Packet
 {
 
 has @.ack_ids;
 
-submethod BUILD()
+method BUILDALL(|)
 {
+    callsame;
     my $main_ack = self.combine_bits( self.payload.subbuf( 0, 4 ) );
     my $ack_index = self.combine_bits( self.payload.subbuf( 4, 4 ) );
     @!ack_ids.push( $main_ack );
